@@ -21,7 +21,7 @@ const MOCK_CONTACTS = [
 
 export const HeroSection = () => {
   return (
-    <section className="w-full h-[650px] lg:py-40 2xl:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px]">
+    <section className="w-full h-[755px] lg:h-[650px] 2xl:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-center pb-10 py-36 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
         <div className="w-full lg:max-w-[538px]">
           <p className="font-mono text-emerald-400">Olá meu nome é</p>
@@ -61,9 +61,9 @@ export const HeroSection = () => {
         <Image
           width={420}
           height={404}
-          src="/images/profile-pic.png"
+          src="/images/profile-pic.jpeg"
           alt="Foto de perfil"
-          className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
+          className="w-[300px] h-[300px] lg:w-[390px] 2xl:w-[420px] lg:h-[375px] 2xl:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
         />
       </div>
     </section>
