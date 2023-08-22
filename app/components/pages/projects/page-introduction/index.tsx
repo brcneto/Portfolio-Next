@@ -22,7 +22,8 @@ export const PageIntroduction = () => {
         transition={{ duration: 0.6 }}
       >
         <p className=" text-gray-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ab optio ducimus laborum aperiam voluptate iusto rerum ut quaerat placeat! Lorem ipsum dolor sit amet.
+          Aqui se encontra alguns dos meus Projetos! navegue pelos repositórios e explore os 
+          projetos que desenvolvi ao longo da minha carreira.
         </p>
         <Link href='/'>
           <HiArrowNarrowLeft size={20} />
