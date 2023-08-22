@@ -5,6 +5,14 @@ import { Header } from './components/header'
 import { ContactForm } from './components/contact-form'
 import { Footer } from './components/footer'
 import { BackToTop } from './components/back-to-top'
+import { Toaster } from './components/toaster'
+
+export const metadata = {
+  title: {
+    default: 'Home | Gilvan Neto',
+    template: '%s | Gilvan Neto'
+  }
+}
 
 const inter = Inter({
   variable: '--font-inter',
@@ -21,6 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
       <body>
+        <Toaster />
         <BackToTop />
 
         <Header />

@@ -5,8 +5,13 @@ import { Button } from "../button"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import { useForm } from "react-hook-form"
 
+import axios from "axios"
+import { toast } from "react-hot-toast"
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+
+import { motion } from "framer-motion"
+import { fadeUpAnimation } from "@/app/lib/animation"
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
@@ -17,12 +22,18 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>
 
 export const ContactForm = () => {
-  const { handleSubmit, register } = useForm<ContactFormData>({
+  const { handleSubmit, register, reset, formState: { isSubmitting } } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema)
   })
 
-  const onSubmit = (data: ContactFormData) => {
-    console.log(data)
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await axios.post('/api/contact', data)
+      toast.success('Mensagem enviada com sucesso!')
+      reset();
+    } catch {
+      toast.error('Ocorreu um erro ao enviar a mensagem. Tente novamente.')
+    }
   }
 
   return (
@@ -37,9 +48,10 @@ export const ContactForm = () => {
           className="items-center text-center"
         />
 
-        <form
+        <motion.form
           className="mt-12 w-full flex flex-col gap-4"
           onSubmit={handleSubmit(onSubmit)}
+          {...fadeUpAnimation}
         >
 
           <input
@@ -60,11 +72,11 @@ export const ContactForm = () => {
             {...register('message')}
           />
 
-          <Button className=" w-max mx-auto mt-6 shadow-button">
+          <Button className=" w-max mx-auto mt-6 shadow-button" disabled={isSubmitting}>
             Enviar mensagem
             <HiArrowNarrowRight />
           </Button>
-        </form>
+        </motion.form>
       </div>
     </section>
   )

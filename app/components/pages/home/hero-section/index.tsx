@@ -1,10 +1,12 @@
 'use client'
 
 import Image from "next/image"
-import { TechBadge } from "../../tech-badge"
+import { TechBadge } from "../../../tech-badge"
 import { Button } from "@/app/components/button"
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { TbBrandGithub, TbBrandLinkedin, TbBrandWhatsapp } from 'react-icons/tb'
+import { motion } from "framer-motion"
+import { techBadgeAnimation } from "@/app/lib/animation"
 
 const MOCK_CONTACTS = [
   {
@@ -16,10 +18,12 @@ const MOCK_CONTACTS = [
     icon: <TbBrandLinkedin />
   },
   {
-    url: '/',
+    url: 'https://api.whatsapp.com/send?phone=+5481991881256&text=Ol%C3%A1%21+Gostaria+de+entrar+em+contato+para+falar+sobre+uma+proposta%21%21%21',
     icon: <TbBrandWhatsapp />
   },
 ]
+
+const techs = ['TypeScript', 'JavaScript', 'NextJS', 'ReactJS', 'TailwindCSS']
 
 export const HeroSection = () => {
   const handleContact = () => {
@@ -33,18 +37,29 @@ export const HeroSection = () => {
   return (
     <section className="w-full h-[650px] 2xl:h-[755px]  bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-center pb-10 py-36 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
-        <div className="w-full lg:max-w-[538px]">
+        <motion.div
+          className="w-full lg:max-w-[538px]"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+        >
           <p className="font-mono text-emerald-400">Olá meu nome é</p>
           <h2 className="text-4xl font-medium mt-2">Gilvan Neto</h2>
 
-          <p className=" text-gray-400 my-6 text-sm sm:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim adipisci nesciunt dicta ratione voluptatem dolorem dignissimos sapiente voluptatum excepturi iusto!</p>
+          <p className=" text-gray-400 my-6 text-sm sm:text-base">
+            Sou desenvolvedor de software voltado para a web, desenvolvo Frontend de aplicações
+            utilizando as principais tecnologias do mercado, ampliando meu conhecimento e buscando
+            me manter sempre atualizado. Estou muito empolgado para trabalhar com você!
+          </p>
 
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index}>
-
-                <TechBadge name="Next.js" />
-              </div>
+            {techs.map((tech, index) => (
+              <TechBadge
+                name={tech}
+                key={index}
+                {...techBadgeAnimation}
+                transition={{ duration: 0.2, delay: index * 0.1 }} />
             ))}
           </div>
 
@@ -69,16 +84,23 @@ export const HeroSection = () => {
           </div>
 
 
-        </div>
+        </motion.div>
 
-        <Image
-          width={420}
-          height={404}
-          src="/images/profile-gilvas.jpeg"
-          alt="Foto de perfil"
-          className="w-[300px] h-[300px] lg:w-[375px] 2xl:w-[404px] lg:h-[375px] 2xl:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-full object-cover"
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 200, scale: 0.5 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Image
+            width={420}
+            height={404}
+            src="/images/profile-gilvas.jpeg"
+            alt="Foto de perfil"
+            className="w-[300px] h-[300px] lg:w-[375px] 2xl:w-[404px] lg:h-[375px] 2xl:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-full object-cover"
+          />
+        </motion.div>
       </div>
-    </section>
+    </section >
   )
 }

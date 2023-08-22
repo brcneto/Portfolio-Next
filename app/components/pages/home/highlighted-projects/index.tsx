@@ -13,15 +13,14 @@ export const HighlightedProjects = () => {
 
       <div>
         <ProjectCard />
-        <HorizontalDivider className="my-16" />
-        <ProjectCard />
-        <HorizontalDivider className="my-16" />
+        {/* <ProjectCard />
+        <HorizontalDivider className="my-16" /> */}
       </div>
 
       <p className=" flex items-center gap-1.5">
         <span className="text-gray-400 ">Se interessou?</span>
-        <Link className="inline-flex text-base" href="/projects">
-          Ver todos
+        <Link className="inline-flex text-base" href="https://github.com/brcneto?tab=repositories" target="_blank">
+          Acesse meus repositórios
           <HiArrowNarrowRight />
         </Link>
       </p>
