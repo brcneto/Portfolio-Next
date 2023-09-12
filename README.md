@@ -6,11 +6,13 @@ Este é o meu portfólio profissional, um site desenvolvido com Next.js, Tailwin
 
 ![Apresentação portfólio](https://github.com/brcneto/Portfolio-Next/blob/main/portfolio.png)
 
+
 ## Tecnologias Utilizadas
 
 - [Next.js](https://nextjs.org/): Um framework React para criar aplicativos da web modernos.
 - [Tailwind CSS](https://tailwindcss.com/): Um framework CSS utilitário que facilita a criação de designs elegantes e responsivos.
 - [TypeScript](https://www.typescriptlang.org/): Um superset JavaScript que adiciona tipagem estática ao código.
+  
 
 ## Funcionalidades
 
@@ -35,9 +37,13 @@ Se você deseja executar este projeto em sua máquina local, siga estas etapas:
    cd Portfolio-Next
    ```
 
+
 3. Instale as dependências:
    ```bash
    npm install
    ```
 
+
 4. E por último abra seu navegador e acesse http://localhost:3000 para ver o portfólio em execução localmente.
+
+
