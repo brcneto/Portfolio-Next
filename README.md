@@ -4,7 +4,7 @@
 
 Este é o meu portfólio profissional, um site desenvolvido com Next.js, Tailwind CSS e TypeScript. Aqui você encontrará informações sobre mim, minhas habilidades, projetos anteriores e como entrar em contato.
 
-[]
+![Apresentação portfólio](https://github.com/brcneto/Portfolio-Next/blob/main/portfolio.png)
 
 ## Tecnologias Utilizadas
 
