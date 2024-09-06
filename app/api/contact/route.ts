@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { NextResponse } from "next/server";
-import { z } from "zod";
+import { NextResponse } from 'next/server'
+import { z } from 'zod'
 
 const bodySchema = z.object({
   name: z.string(),
   email: z.string().email(),
-  message: z.string()
+  message: z.string(),
 })
 
 const WEBHOOK_URL = process.env.WEBHOOK_URL!
@@ -40,14 +40,13 @@ export async function POST(request: Request) {
       ],
     }
 
-    await axios.post(WEBHOOK_URL, messageData);
+    await axios.post(WEBHOOK_URL, messageData)
 
     return NextResponse.json({
-      message: 'Mensagem enviada com sucesso'
+      message: 'Mensagem enviada com sucesso',
     })
-
   } catch (err) {
-    console.error(err);
-    return NextResponse.error();
+    console.error(err)
+    return NextResponse.error()
   }
 }

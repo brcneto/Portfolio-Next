@@ -14,7 +14,7 @@ const projects = [
       do navegador, assegurando que as informações não sejam perdidas.`,
 
     techs: 'ReactJS, CSS-Modules, LocalStorage',
-    url: 'https://github.com/brcneto/ToDo-List-ReactJS'
+    url: 'https://github.com/brcneto/ToDo-List-ReactJS',
   },
   {
     name: 'Schedule',
@@ -25,12 +25,11 @@ const projects = [
     EJS permitiu a criação de páginas dinâmicas.`,
 
     techs: 'EJS, BootStrap, Express, MongoDB',
-    url: 'https://github.com/brcneto/agenda'
-  }
+    url: 'https://github.com/brcneto/agenda',
+  },
 ]
 
 export const ProjectsList = () => {
-
   return (
     <section className="container py-32 grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-x-4 gap-y-6">
       {projects.map((project, i) => (
@@ -39,8 +38,12 @@ export const ProjectsList = () => {
           {...fadeUpAnimation}
           transition={{ duration: 0.5, delay: i * 0.1 }}
         >
-          <Link href={project.url} target='_blank'>
-            <ProjectCard name={project.name} description={project.description} techs={project.techs} />
+          <Link href={project.url} target="_blank">
+            <ProjectCard
+              name={project.name}
+              description={project.description}
+              techs={project.techs}
+            />
           </Link>
         </motion.div>
       ))}

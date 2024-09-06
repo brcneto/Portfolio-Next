@@ -1,9 +1,9 @@
-import { HorizontalDivider } from "@/app/components/divider/horizontal"
-import { SectionTitle } from "@/app/components/section-title"
-import { ProjectCard } from "./project-card"
-import { Link } from "@/app/components/link"
+import { HorizontalDivider } from '@/app/components/divider/horizontal'
+import { SectionTitle } from '@/app/components/section-title'
+import { ProjectCard } from './project-card'
+import { Link } from '@/app/components/link'
 
-import { HiArrowNarrowRight } from "react-icons/hi"
+import { HiArrowNarrowRight } from 'react-icons/hi'
 
 export const HighlightedProjects = () => {
   return (
@@ -19,7 +19,11 @@ export const HighlightedProjects = () => {
 
       <p className=" flex items-center gap-1.5">
         <span className="text-gray-400 ">Se interessou?</span>
-        <Link className="inline-flex text-base" href="https://github.com/brcneto?tab=repositories" target="_blank">
+        <Link
+          className="inline-flex text-base"
+          href="https://github.com/brcneto?tab=repositories"
+          target="_blank"
+        >
           Acesse meus repositórios
           <HiArrowNarrowRight />
         </Link>

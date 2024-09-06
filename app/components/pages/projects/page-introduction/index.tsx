@@ -1,9 +1,9 @@
 'use client'
 
-import { Link } from "@/app/components/link"
-import { SectionTitle } from "@/app/components/section-title"
-import { HiArrowNarrowLeft } from "react-icons/hi"
-import { motion } from "framer-motion"
+import { Link } from '@/app/components/link'
+import { SectionTitle } from '@/app/components/section-title'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { motion } from 'framer-motion'
 
 export const PageIntroduction = () => {
   return (
@@ -22,10 +22,10 @@ export const PageIntroduction = () => {
         transition={{ duration: 0.6 }}
       >
         <p className=" text-gray-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Aqui se encontra alguns dos meus Projetos! navegue pelos repositórios e explore os 
-          projetos que desenvolvi ao longo da minha carreira.
+          Aqui se encontra alguns dos meus Projetos! navegue pelos repositórios
+          e explore os projetos que desenvolvi ao longo da minha carreira.
         </p>
-        <Link href='/'>
+        <Link href="/">
           <HiArrowNarrowLeft size={20} />
           Voltar para Home
         </Link>

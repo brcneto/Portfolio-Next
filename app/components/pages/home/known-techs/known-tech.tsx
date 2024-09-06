@@ -1,5 +1,5 @@
-import { getRelativeTimeString } from "@/app/utils/get-relative-time"
-import { ReactNode } from "react"
+import { getRelativeTimeString } from '@/app/utils/get-relative-time'
+import { ReactNode } from 'react'
 
 type KnowTechProps = {
   tech: {
@@ -11,7 +11,9 @@ type KnowTechProps = {
 
 export const KnownTech = ({ tech }: KnowTechProps) => {
   const relativeTime = getRelativeTimeString(
-    new Date(tech.startDate), 'pt-BR').replace('há ', '')
+    new Date(tech.startDate),
+    'pt-BR',
+  ).replace('há ', '')
 
   return (
     <div className="p-6 rounded-lg bg-gray-600/20 text-gray-500 flex flex-col gap-2 hover:text-emerald-500 hover:bg-gray-600/30 transition-all">

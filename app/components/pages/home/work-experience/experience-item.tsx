@@ -1,10 +1,9 @@
 'use client'
 
-import Image from "next/image"
-import { TechBadge } from "../../../tech-badge"
-import { motion } from "framer-motion"
-import { techBadgeAnimation } from "@/app/lib/animation"
-import { fadeUpAnimation } from "@/app/lib/animation"
+import Image from 'next/image'
+import { TechBadge } from '../../../tech-badge'
+import { motion } from 'framer-motion'
+import { techBadgeAnimation, fadeUpAnimation } from '@/app/lib/animation'
 
 const techs = ['Windows Server', 'Redes de computadores']
 
@@ -34,16 +33,17 @@ export const ExperienceItem = () => {
 
           <h4 className="text-gray-300">Estagiário</h4>
 
-          <span className="text-gray-500">
-            dez 2021 - abr 2022 - 4 meses
-          </span>
+          <span className="text-gray-500">dez 2021 - abr 2022 - 4 meses</span>
           <p className="text-gray-400">
-            Manter disponibilidade do servidor, gerenciamento de usuários na rede interna - Windows Server,
-            manutenção de software/hardware e suporte aos colaboradores.
+            Manter disponibilidade do servidor, gerenciamento de usuários na
+            rede interna - Windows Server, manutenção de software/hardware e
+            suporte aos colaboradores.
           </p>
         </div>
 
-        <p className=" text-gray-400 text-sm mb-3 mt-6 font-semibold">Competências</p>
+        <p className=" text-gray-400 text-sm mb-3 mt-6 font-semibold">
+          Competências
+        </p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
           {techs.map((name, index) => (
             <TechBadge

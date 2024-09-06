@@ -13,7 +13,6 @@ const todoTechs = ['ReactJS', 'CSS-Modules', 'LocalStorage']
 const scheduleTechs = ['EJS', 'BootStrap', 'Express', 'MongoDB']
 
 export const ProjectCard = () => {
-
   return (
     <>
       <motion.div
@@ -49,20 +48,21 @@ export const ProjectCard = () => {
               src="/images/icons/project-title-icon.svg"
             />
             ToDo List
-          </motion.h3 >
+          </motion.h3>
 
-          <motion.p className=" text-gray-400 my-6"
+          <motion.p
+            className=" text-gray-400 my-6"
             {...fadeUpAnimation}
             transition={{ duration: 0.2, delay: 0.3 }}
           >
-            Lista de Tarefas com ReactJS, oferecendo uma experiência
-            interativa e agradável aos usuários. A aplicação é estilizada
-            com CSS-Modules para uma apresentação visual atrativa. Para garantir a
-            preservação das tarefas, implementei o armazenamento dos dados no LocalStorage do
-            navegador, assegurando que as informações não sejam perdidas.
+            Lista de Tarefas com ReactJS, oferecendo uma experiência interativa
+            e agradável aos usuários. A aplicação é estilizada com CSS-Modules
+            para uma apresentação visual atrativa. Para garantir a preservação
+            das tarefas, implementei o armazenamento dos dados no LocalStorage
+            do navegador, assegurando que as informações não sejam perdidas.
           </motion.p>
 
-          <div className='flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[350px]'>
+          <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[350px]">
             {todoTechs.map((name, index) => (
               <TechBadge
                 key={index}
@@ -73,13 +73,11 @@ export const ProjectCard = () => {
             ))}
           </div>
 
-          <Link href='https://github.com/brcneto/ToDo-List-ReactJS'>
+          <Link href="https://github.com/brcneto/ToDo-List-ReactJS">
             Ver repositório
             <HiArrowNarrowRight />
           </Link>
         </div>
-
-
       </motion.div>
       <HorizontalDivider className="my-16" />
 
@@ -116,20 +114,23 @@ export const ProjectCard = () => {
               src="/images/icons/project-title-icon.svg"
             />
             Schedule
-          </motion.h3 >
+          </motion.h3>
 
-          <motion.p className=" text-gray-400 my-6"
+          <motion.p
+            className=" text-gray-400 my-6"
             {...fadeUpAnimation}
             transition={{ duration: 0.2, delay: 0.3 }}
           >
-            um aplicativo de agenda com login seguro, seguindo o padrão MVC para integração do frontend e
-            backend. Implementei um banco de dados não relacional, garantindo flexibilidade na estrutura.
-            Para segurança, adicionei um sistema de login com sessões e utilizei flash messages para
-            notificações e integrei tokens CSRF para proteção adicional.. O uso da linguagem de modelagem
-            EJS permitiu a criação de páginas dinâmicas.
+            um aplicativo de agenda com login seguro, seguindo o padrão MVC para
+            integração do frontend e backend. Implementei um banco de dados não
+            relacional, garantindo flexibilidade na estrutura. Para segurança,
+            adicionei um sistema de login com sessões e utilizei flash messages
+            para notificações e integrei tokens CSRF para proteção adicional.. O
+            uso da linguagem de modelagem EJS permitiu a criação de páginas
+            dinâmicas.
           </motion.p>
 
-          <div className='flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[350px]'>
+          <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[350px]">
             {scheduleTechs.map((name, index) => (
               <TechBadge
                 key={index}
@@ -140,16 +141,13 @@ export const ProjectCard = () => {
             ))}
           </div>
 
-          <Link href='https://github.com/brcneto/agenda'>
+          <Link href="https://github.com/brcneto/agenda">
             Ver repositório
             <HiArrowNarrowRight />
           </Link>
         </div>
-
-
       </motion.div>
       <HorizontalDivider className="my-16" />
     </>
-
   )
 }

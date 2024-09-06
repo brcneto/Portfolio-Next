@@ -7,5 +7,5 @@ export const techBadgeAnimation = {
 export const fadeUpAnimation = {
   initial: { opacity: 0, y: 50 },
   whileInView: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 50 }
+  exit: { opacity: 0, y: 50 },
 }

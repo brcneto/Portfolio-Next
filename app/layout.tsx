@@ -10,8 +10,8 @@ import { Toaster } from './components/toaster'
 export const metadata = {
   title: {
     default: 'Home | Gilvan Neto',
-    template: '%s | Gilvan Neto'
-  }
+    template: '%s | Gilvan Neto',
+  },
 }
 
 const inter = Inter({

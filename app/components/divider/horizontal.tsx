@@ -1,4 +1,4 @@
-import { cn } from "@/app/lib/utils"
+import { cn } from '@/app/lib/utils'
 
 type HorizontalDividerProps = {
   className?: string
@@ -6,6 +6,6 @@ type HorizontalDividerProps = {
 
 export const HorizontalDivider = ({ className }: HorizontalDividerProps) => {
   return (
-    <div className={cn("w-full my-8 border-b border-b-gray-800", className)} />
+    <div className={cn('w-full my-8 border-b border-b-gray-800', className)} />
   )
 }

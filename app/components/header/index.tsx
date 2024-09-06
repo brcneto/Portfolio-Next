@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import { NavItem } from "./nav-item";
-import { motion } from "framer-motion";
+import { NavItem } from './nav-item'
+import { motion } from 'framer-motion'
 
 const NAV_ITEMS = [
   {
     label: 'Home',
-    href: '/'
+    href: '/',
   },
   {
     label: 'Projetos',
-    href: '/projects'
-  }
+    href: '/projects',
+  },
 ]
 
 export const Header = () => {
@@ -23,9 +23,8 @@ export const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container flex justify-end">
-
         <nav className=" flex items-center gap-4 sm:gap-10">
-          {NAV_ITEMS.map(item => (
+          {NAV_ITEMS.map((item) => (
             <NavItem {...item} key={item.label} />
           ))}
         </nav>

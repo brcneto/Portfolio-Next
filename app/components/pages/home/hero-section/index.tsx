@@ -1,42 +1,38 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { TechBadge } from "../../../tech-badge";
-import { Button } from "@/app/components/button";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import {
-  TbBrandGithub,
-  TbBrandLinkedin,
-  TbBrandWhatsapp,
-} from "react-icons/tb";
-import { motion } from "framer-motion";
-import { techBadgeAnimation } from "@/app/lib/animation";
+import Image from 'next/image'
+import { TechBadge } from '../../../tech-badge'
+import { Button } from '@/app/components/button'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { TbBrandGithub, TbBrandLinkedin, TbBrandWhatsapp } from 'react-icons/tb'
+import { motion } from 'framer-motion'
+import { techBadgeAnimation } from '@/app/lib/animation'
 
 const MOCK_CONTACTS = [
   {
-    url: "http://github.com.br/brcneto",
+    url: 'http://github.com.br/brcneto',
     icon: <TbBrandGithub />,
   },
   {
-    url: "https://linkedin.com/in/gilvan-neto-desenvolvedor/",
+    url: 'https://linkedin.com/in/gilvan-neto-desenvolvedor/',
     icon: <TbBrandLinkedin />,
   },
   {
-    url: "https://api.whatsapp.com/send?phone=+5481991881256&text=Ol%C3%A1%21+Gostaria+de+entrar+em+contato+para+falar+sobre+uma+proposta%21%21%21",
+    url: 'https://api.whatsapp.com/send?phone=+5481991881256&text=Ol%C3%A1%21+Gostaria+de+entrar+em+contato+para+falar+sobre+uma+proposta%21%21%21',
     icon: <TbBrandWhatsapp />,
   },
-];
+]
 
-const techs = ["TypeScript", "JavaScript", "NextJS", "ReactJS", "TailwindCSS"];
+const techs = ['TypeScript', 'JavaScript', 'NextJS', 'ReactJS', 'TailwindCSS']
 
 export const HeroSection = () => {
   const handleContact = () => {
-    const contactSection = document.querySelector("#contact");
+    const contactSection = document.querySelector('#contact')
 
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      contactSection.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   return (
     <section className="w-full h-[650px] 2xl:h-[755px]  bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-center pb-10 py-36 lg:pb-[110px]">
@@ -82,6 +78,7 @@ export const HeroSection = () => {
                   key={`contact-${index}`}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
+                  rel="noreferrer"
                 >
                   {contact.icon}
                 </a>
@@ -106,5 +103,5 @@ export const HeroSection = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}

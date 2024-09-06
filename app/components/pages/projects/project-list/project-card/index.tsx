@@ -1,9 +1,9 @@
-import Image from "next/image"
-import { TbBrandGithub } from "react-icons/tb"
+import Image from 'next/image'
+import { TbBrandGithub } from 'react-icons/tb'
 
 type ProjectCardProps = {
-  name: string,
-  description: string,
+  name: string
+  description: string
   techs: string
 }
 
@@ -15,13 +15,15 @@ export const ProjectCard = ({ name, description, techs }: ProjectCardProps) => {
       </div>
 
       <div className="flex-1 flex flex-col p-6">
-        <strong className=" font-medium text-gray-50/90 group-hover:text-emerald-500">{name}</strong>
+        <strong className=" font-medium text-gray-50/90 group-hover:text-emerald-500">
+          {name}
+        </strong>
 
-        <p className=" mt-2 text-gray-400 line-clamp-4">
-          {description}
-        </p>
+        <p className=" mt-2 text-gray-400 line-clamp-4">{description}</p>
 
-        <span className="text-gray-300 text-sm font-medium mt-auto truncate">{techs}</span>
+        <span className="text-gray-300 text-sm font-medium mt-auto truncate">
+          {techs}
+        </span>
       </div>
     </div>
   )

@@ -1,36 +1,41 @@
 'use client'
 
-import { SectionTitle } from "../section-title"
-import { Button } from "../button"
-import { HiArrowNarrowRight } from "react-icons/hi"
-import { useForm } from "react-hook-form"
+import { SectionTitle } from '../section-title'
+import { Button } from '../button'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { useForm } from 'react-hook-form'
 
-import axios from "axios"
-import { toast } from "react-hot-toast"
+import axios from 'axios'
+import { toast } from 'react-hot-toast'
 import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { motion } from "framer-motion"
-import { fadeUpAnimation } from "@/app/lib/animation"
+import { motion } from 'framer-motion'
+import { fadeUpAnimation } from '@/app/lib/animation'
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
   email: z.string().email(),
-  message: z.string().min(1).max(500)
+  message: z.string().min(1).max(500),
 })
 
 type ContactFormData = z.infer<typeof contactFormSchema>
 
 export const ContactForm = () => {
-  const { handleSubmit, register, reset, formState: { isSubmitting } } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema)
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
   })
 
   const onSubmit = async (data: ContactFormData) => {
     try {
       await axios.post('/api/contact', data)
       toast.success('Mensagem enviada com sucesso!')
-      reset();
+      reset()
     } catch {
       toast.error('Ocorreu um erro ao enviar a mensagem. Tente novamente.')
     }
@@ -53,7 +58,6 @@ export const ContactForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           {...fadeUpAnimation}
         >
-
           <input
             placeholder="Nome"
             className="w-full h-14 bg-gray-800 rounded-lg px-4 placeholder:text-gray-400 text-gray-50 focus:outline-none focus:ring-2 ring-emerald-600"
@@ -72,7 +76,10 @@ export const ContactForm = () => {
             {...register('message')}
           />
 
-          <Button className=" w-max mx-auto mt-6 shadow-button" disabled={isSubmitting}>
+          <Button
+            className=" w-max mx-auto mt-6 shadow-button"
+            disabled={isSubmitting}
+          >
             Enviar mensagem
             <HiArrowNarrowRight />
           </Button>
